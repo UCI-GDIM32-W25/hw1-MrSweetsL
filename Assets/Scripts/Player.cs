@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
 
-        //Player WASD Movement
+        //Player WASD movement
         if(Input.GetKey(KeyCode.W)) {
 
             _playerTransform.Translate(Vector3.up * _speed * Time.deltaTime);
