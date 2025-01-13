@@ -40,6 +40,8 @@ How would you describe this game world in objects? What attributes and actions d
 
 So my coding breakdown wasn't too off the mark from Professor Reids during class. I got the ideas right and how the different codes interact with each other. However, Professor Reid's breakdown was like SUPER specific to like naming the public class and typing specific code stuff. I didn't do that for my notes because I couldn't remember all the stuff from the script but I think my first time breaking down code wasn't too bad since I at least got the ideas down. Next time, I'll try to be more specific by including code names and such. 
 
+The way I connected my coding breakdown to my coding process was I did each function one at a time for one script at a time. For example, for the 
+
 My Coding Process:
 
 My biggest problem while coding was figuring out the public void PlantSeed() function. Specifically figuring out how to change the in-game score., Text_SeedsPlantedNum and Text_SeedsRemainingNum, when the player planted a seed which meant that they pressed down the space button.
