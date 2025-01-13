@@ -64,9 +64,11 @@ public class Player : MonoBehaviour
         
         if(_numSeedsPlanted < 5){
 
-            GameObject plantSeeds = Instantiate(_plantPrefab) as GameObject;
-            Debug.Log("Seed Planted");
+            GameObject plantSeeds = (_plantPrefab) as GameObject;
+            Instantiate (plantSeeds, _playerTransform.position, Quaternion.identity);
 
+            Debug.Log("Seed Planted");
+           
         }
 
     }
