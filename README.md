@@ -40,7 +40,9 @@ How would you describe this game world in objects? What attributes and actions d
 
 So my coding breakdown wasn't too off the mark from Professor Reids during class. I got the ideas right and how the different codes interact with each other. However, Professor Reid's breakdown was like SUPER specific to like naming the public class and typing specific code stuff. I didn't do that for my notes because I couldn't remember all the stuff from the script but I think my first time breaking down code wasn't too bad since I at least got the ideas down. Next time, I'll try to be more specific by including code names and such. 
 
-The way I connected my coding breakdown to my coding process was I did each function one at a time for one script at a time. For example, for the 
+The way I connected my coding breakdown to my coding process was I did each function one at a time for one script at a time. For example, I started with the Player.cs script coding. The first thing I did from my break down list is the player sprites WASD movement. I should have specified in my breakdown that this is done with several if statements inside the private void Update() function. The next thing on the list was if the player pressed down on KeyCode.Space then call PlantSeed(); which then leads us to the public void PlantSeed() function and I should have mentioned that inside this function I need to use the instantiate code to create the plant prefab in my breakdown notes. 
+
+The next thing I did was to make sure the UI score outputted the correct Text_SeedsPlantedNum and Text_SeedsRemainingNum which should have been mentioned in my breakdown for the UI. 
 
 My Coding Process:
 
