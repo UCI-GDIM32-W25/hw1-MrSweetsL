@@ -46,6 +46,8 @@ Shout out to Professor Reid, Elijah, Liam, Vix, and Kevin for helping me figure 
 
 The next thing I had a problem was feeding the public void UpdateSeeds (int seedsLeft, int seedsPlanted) from PlantCountUI script the right information so that it shows the correct score in-game. At first I tried using seedsLeft and seedsPlanted as the variable I wanted to change and feed into the plantCountUI.UpdateSeeds but it was wrong because seedsLeft and seedsPlanted does not exist inside the Player script. I needed to use _numSeedsLeft and _numSeedsPlanted since they already existed in the Player script.
 
+Once I coded in _numSeedsLeft -= 1; and _numSeedsPlanted += 1; the Text_SeedsPlantedNum was working in the game scene but Text_SeedsRemainingNum wasn't. The reason was because I didn't set _numSeedsLeft = _numSeeds; in private void Start (). Finally everything worked after fixing and adding the code. To make sure that the player can't plant anymore seeds, I added an if statement where the score can only change when _numSeedsPlanted <= 5. I did the same thing for PlantSeed() so that the plant prefab can only show up on the screen if there are already 5 existing in the screen. 
+
 ## Open-Source Assets
 If you added any other outside assets, list them here!
 - [Sprout Lands sprite asset pack](https://cupnooble.itch.io/sprout-lands-asset-pack) - character and item sprites
