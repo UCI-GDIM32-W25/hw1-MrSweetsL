@@ -10,5 +10,6 @@ public class PlantCountUI : MonoBehaviour
     {
         _remainingText.text = seedsLeft.ToString();
         _plantedText.text = seedsPlanted.ToString();
+        
     }
 }

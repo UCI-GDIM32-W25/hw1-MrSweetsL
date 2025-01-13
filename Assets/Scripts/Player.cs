@@ -13,16 +13,22 @@ public class Player : MonoBehaviour
 
     private void Start ()
     {
-        _plantCountUI.UpdateSeeds(5, 0);
+        _plantCountUI.UpdateSeeds(_numSeeds, 0);
     }
 
     private void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Space)) {
 
-        PlantSeed();
+            PlantSeed();
+            
+            _numSeedsLeft = _numSeeds - 1;
+            _numSeedsPlanted += 1;
 
+            _plantCountUI.UpdateSeeds(_numSeedsLeft, _numSeedsPlanted);
 
-        //Player WASD movement
+        }
+
         if(Input.GetKey(KeyCode.W)) {
 
             _playerTransform.Translate(Vector3.up * _speed * Time.deltaTime);
@@ -50,14 +56,8 @@ public class Player : MonoBehaviour
 
     public void PlantSeed()
     {
-        if(Input.GetKeyDown(KeyCode.Space)) {
+        Debug.Log("Seed Planted");
+        GameObject plantSeeds = Instantiate(_plantPrefab) as GameObject;
 
-            Debug.Log("Seed Planted");
-
-            GameObject plantSeeds = Instantiate(_plantPrefab) as GameObject;
-
-            _plantCountUI.UpdateSeeds(_numSeeds - 1, 0 + 1);
-
-        }
     }
 }
