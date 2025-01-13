@@ -37,7 +37,16 @@ How would you describe this game world in objects? What attributes and actions d
   The player sprite interacts with Plant sprites through the space button.
   
   The number of plant sprites on the screen affects the output number in the UI.
-  
+
+My Coding Process:
+
+My biggest problem while coding was figuring out the public void PlantSeed() function. Specifically figuring out how to change the in game score., Text_SeedsPlantedNum and Text_SeedsRemainingNum, when the player planted a seed which meant that they pressed down the space button.
+
+Shout out to Professor Reid, Elijah, Liam, Vix, and Kevin for helping me figure it out. I learned that I needed to move my if(Input.GetKeyDown(KeyCode.Space)) if statement to private void Update() because PlantSeed() is purely made to only instantiate the plant seed prefab so that it shows up on the in-game screen. 
+
+The next thing I had a problem was feeding the public void UpdateSeeds (int seedsLeft, int seedsPlanted) from PlantCountUI script the right information so that it shows the correct score in-game. At first I tried using seedsLeft and seedsPlanted as the variable I wanted to change and feed into the plantCountUI.UpdateSeeds but it was wrong because seedsLeft and seedsPlanted does not exist inside the Player script. I needed to use _numSeedsLeft and _numSeedsPlanted since they already existed in the Player script.
+
+Once I coded in _numSeedsLeft -= 1; and _numSeedsPlanted += 1; the Text_SeedsPlantedNum was working in the game scene but Text_SeedsRemainingNum wasn't. The reason was because I didn't set _numSeedsLeft = _numSeeds; in private void Start (). Finally everything worked after fixing and adding the code. To make sure that the player can't plant anymore seeds, I added an if statement where the score can only change when _numSeedsPlanted <= 5. I did the same thing for PlantSeed() so that the plant prefab can only show up on the screen if there are already 5 existing in the screen. 
 
 ## Open-Source Assets
 If you added any other outside assets, list them here!
