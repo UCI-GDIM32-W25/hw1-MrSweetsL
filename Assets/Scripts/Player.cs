@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     private void Start ()
     {
         _plantCountUI.UpdateSeeds(_numSeeds, 0);
+        _numSeedsLeft = _numSeeds;
     }
 
     private void Update()
@@ -21,11 +22,15 @@ public class Player : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space)) {
 
             PlantSeed();
-            
-            _numSeedsLeft = _numSeeds - 1;
+        
+            _numSeedsLeft -= 1;
             _numSeedsPlanted += 1;
+            
+            if(_numSeedsPlanted <= 5){
+                
+                _plantCountUI.UpdateSeeds(_numSeedsLeft, _numSeedsPlanted);
 
-            _plantCountUI.UpdateSeeds(_numSeedsLeft, _numSeedsPlanted);
+            }
 
         }
 
@@ -56,8 +61,13 @@ public class Player : MonoBehaviour
 
     public void PlantSeed()
     {
-        Debug.Log("Seed Planted");
-        GameObject plantSeeds = Instantiate(_plantPrefab) as GameObject;
+        
+        if(_numSeedsPlanted < 5){
+
+            GameObject plantSeeds = Instantiate(_plantPrefab) as GameObject;
+            Debug.Log("Seed Planted");
+
+        }
 
     }
 }
