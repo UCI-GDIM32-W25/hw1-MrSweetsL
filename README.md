@@ -10,6 +10,22 @@ Prompt: Include the HW1 break-down exercise you wrote during the Week 1 - Lectur
 
 Write your Devlog here!
 
+W1 L2 In Class Notes:
+
+How would you describe this game world in objects? What attributes and actions do these objects have? How do these objects act on or affect each other?
+
+  Player - Bunny sprite
+    Press WASD to move the sprite.
+    Press Space so the Player Sprite plants seeds.
+  Plant Sprites
+    When the Player presses space, a plant sprite appears from the player's location.
+  UI
+    Seeds planted:
+      Counts and outputs the amount of plant sprites on screen.
+    Seeds remaining:
+      Counts and outputs the amount of plants remaining. 
+  The player sprite interacts with Plant sprites through the space button.
+  The number of plant sprites on the screen affects the output number in the UI.
 
 ## Open-Source Assets
 If you added any other outside assets, list them here!
