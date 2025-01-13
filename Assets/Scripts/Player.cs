@@ -13,13 +13,14 @@ public class Player : MonoBehaviour
 
     private void Start ()
     {
-        _plantCountUI.UpdateSeeds(_numSeeds, 0);
+        _plantCountUI.UpdateSeeds(5, 0);
     }
 
     private void Update()
     {
 
         PlantSeed();
+
 
         //Player WASD movement
         if(Input.GetKey(KeyCode.W)) {
@@ -53,7 +54,9 @@ public class Player : MonoBehaviour
 
             Debug.Log("Seed Planted");
 
-            //GameObject plantSeeds = Instantiate(_plantPrefab) as GameObject;
+            GameObject plantSeeds = Instantiate(_plantPrefab) as GameObject;
+
+            _plantCountUI.UpdateSeeds(_numSeeds - 1, 0 + 1);
 
         }
     }
